@@ -1,9 +1,12 @@
-class Shoe
-  attr_accessor :color, :size, :material, :condition
-  attr_reader :brand
+require 'pry'
 
-  def initialize(brand)
+class Shoe
+  attr_accessor :color, :size, :material, :condition, :brand
+  BRANDS = []
+
+  def initialize brand
     @brand = brand
+    BRANDS.any?(brand) ?  nil : BRANDS << brand
   end
 
   def cobble
